@@ -1,5 +1,6 @@
 package com.lokesh.mongodb_demo.collection;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Document
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Employee
 {
     @Id
