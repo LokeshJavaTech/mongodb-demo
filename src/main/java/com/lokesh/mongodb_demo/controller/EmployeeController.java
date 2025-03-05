@@ -72,6 +72,21 @@ public class EmployeeController {
                     .build());
     }
 
+    @GetMapping("/age")
+    public ResponseEntity<EmployeeResponseDto> findByAgeBetween(@RequestParam int minAge,
+                                                                        @RequestParam int maxAge) {
+        List<Employee> employeeList = employeeService.findByAgeBetween(minAge, maxAge);
+        if (CollectionUtils.isEmpty(employeeList))
+            return ResponseEntity.ok(EmployeeResponseDto.builder()
+                    .responseMessage("No employees found for age between.")
+                    .build());
+        else
+            return ResponseEntity.ok(EmployeeResponseDto.builder()
+                    .employeeList(employeeList)
+                    .responseMessage("Successfully retrieved employee for age between.")
+                    .build());
+    }
+
     @PutMapping(value = "/{id}")
     public ResponseEntity<EmployeeResponseDto> updateEmployee(@PathVariable("id") String id, @RequestBody Employee employee) {
         Employee updatedEmployee = employeeService.updateEmployee(id, employee);

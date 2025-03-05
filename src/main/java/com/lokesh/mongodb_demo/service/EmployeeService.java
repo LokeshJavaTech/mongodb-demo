@@ -27,6 +27,10 @@ public class EmployeeService {
         return employeeRepository.findByMobileNumber(mobileNumber);
     }
 
+    public List<Employee> findByAgeBetween(int minAge, int maxAge) {
+        return employeeRepository.findByAgeBetweenRange(minAge, maxAge);
+    }
+
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }

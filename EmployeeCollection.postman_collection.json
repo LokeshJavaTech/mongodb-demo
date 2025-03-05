@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"Lokesh\",\r\n    \"mobileNumber\" : \"11111\",\r\n    \"city\" : \"Noida\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"Lokesh\",\r\n    \"mobileNumber\" : \"11111\",\r\n    \"city\" : \"Noida\",\r\n    \"age\": 7\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +70,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/employee/67c8ac55bff0cd3e7163c790",
+					"raw": "http://localhost:8080/api/employee/67c8c42d3a1a824e8979ae30",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -79,7 +79,7 @@
 					"path": [
 						"api",
 						"employee",
-						"67c8ac55bff0cd3e7163c790"
+						"67c8c42d3a1a824e8979ae30"
 					]
 				}
 			},
@@ -120,7 +120,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"Lokesh Mittal\",\r\n    \"mobileNumber\" : \"22222\",\r\n    \"city\" : \"New Delhi\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"Lokesh Mittal\",\r\n    \"mobileNumber\" : \"11111\",\r\n    \"city\" : \"New Delhi\",\r\n    \"age\" : 15\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -128,7 +128,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/employee/67c8ac55bff0cd3e7163c790",
+					"raw": "http://localhost:8080/api/employee/67c8c42d3a1a824e8979ae30",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -137,7 +137,7 @@
 					"path": [
 						"api",
 						"employee",
-						"67c8ac55bff0cd3e7163c790"
+						"67c8c42d3a1a824e8979ae30"
 					]
 				}
 			},
@@ -162,6 +162,40 @@
 						"api",
 						"employee",
 						"67c8ac55bff0cd3e7163c790"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by Age Between",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employee/age?minAge=1&maxAge=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"age"
+					],
+					"query": [
+						{
+							"key": "minAge",
+							"value": "1"
+						},
+						{
+							"key": "maxAge",
+							"value": "20"
+						}
 					]
 				}
 			},

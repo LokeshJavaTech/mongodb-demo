@@ -27,5 +27,7 @@ public class Employee
     @Field(name = "city")
     private String city;
 
+    private int age;
+
     private LocalDateTime createdDate;
 }

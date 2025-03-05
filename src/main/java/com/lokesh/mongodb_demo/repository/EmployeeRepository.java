@@ -12,4 +12,15 @@ public interface EmployeeRepository extends MongoRepository<Employee, String> {
 
     @Query("{ 'mobileNumber' : ?0 }")
     List<Employee> findByMobileNumber(String mobileNumber);
+
+
+    @Query(
+            value = "{ 'age' : { $gte : ?0 , $lte : ?1 }}",
+            fields = "{ 'mobileNumber' : 0 }"                       // Don't send mobileNumber in the response
+    )
+    List<Employee> findByAgeBetweenRange(int minAge, int maxAge);
+
+    //List<Employee> findByAgeBetween(int minAge, int maxAge);      // Using repository query
+
+
 }
